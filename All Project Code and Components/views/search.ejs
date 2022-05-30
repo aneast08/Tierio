@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <!--page setup-->
+        <script src="../create_tier.js"></script>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+		<meta name="description" content="">
+		<!-- Bootstrap core CSS -->
+		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+		<link href="../resources/css/my_style.css" rel="stylesheet">
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    </head>
+
+
+    <body class= "bg-custom-bubbles">
+        <!--afixed navbar-->
+		<nav class="navbar navbar-expand-lg navbar-dark bg-custom-1">
+            <a class="navbar-brand" href="home_page">
+                <img class="rounded-circle" src="http://clipart-library.com/img1/766256.png" alt="Logo" width="30" height="30">
+            </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarText">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item active">
+                    <a class="nav-link" href="home_page">Home<span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="login">Create a Tier List</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="leaderboard">Leaderboard</a>
+                </li>
+		<li class="nav-item">
+                    <a class="nav-link" href="search">Search</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+        <!--few breaks for spacing-->
+        <br>
+        <br>
+        <br>
+        <br>
+        
+        <div class="card card-image bg-custom-1" style="width: 30rem; margin-left: 10rem; margin-bottom: 2rem;">
+			<div class="text-white rgba-stylish-strong">
+        <!-- <div class="card" style="width: 18rem; margin-left: 10rem; margin-bottom: 2rem;"> -->
+        <form class="form" action="/search" method="get">
+            <div class="card-body">
+            <div class="form-group">
+		    <label for="search_by_input">Search By:</label>
+		    <select class="form-control" name="search_by_input">
+		      <option>category</option>
+		      <option>creator_name</option>
+		      <option>tierlist_name</option>
+		    </select>
+		  </div>
+                 <input class="form-control" type="text" name="search_string_input" placeholder="Search Value">
+                 <button type="submit" class="btn btn-primary">Search</button>
+              <h4> Search Catagory: <div id = "search_catagory"><%=search_by%></div> Search Value: <div id = "search_value"><%=search_string%></div> </h4>
+            </div>
+            </div>
+        </div>
+        </form>
+
+        <form class="form" action="/view" method="get">
+        <div class="card mb-3" style="max-width: 70rem; background-color: white; margin-left: 10rem;">
+        
+            <div id="search_items" class="card-body">
+                         <% for (var i = 0; i < data.length; i++) { %>
+                            <div class="card text-white bg-info mb-3" style="width: 15rem; display:inline-block; margin-left: 1rem;">
+                                <div class="card-header"> <%=data[i].creator_name%></div>
+                                <div class="card-body">
+                                    <h5 class="card-title"> <%=data[i].tierlist_name%> </h5>
+                                    <p class="card-text"> <%=data[i].category%> </p>
+                                </div>
+                            </div>
+                         <% } %>
+                 <select class="custom-select" name="id_val" onchange="this.form.submit()">
+                 <option selected>Select Tier to View</option>
+                 <% for (var i = 0; i < data.length; i++) { %>
+                 	<option name="id_selection" value="<%=data[i].tierlistid%>"><%=data[i].tierlist_name%>, <%=data[i].creator_name%></option>
+                 <% } %>
+                 </select>
+            </div>
+            
+        </div>
+        </form>
+    </body>
+
+</html>

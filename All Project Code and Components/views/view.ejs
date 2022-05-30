@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <!--page setup-->
+        <script src="../view_tier.js"></script>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+		<meta name="description" content="">
+		<!-- Bootstrap core CSS -->
+		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+		<link href="../resources/css/my_style.css" rel="stylesheet">
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    </head>
+    <body class="bg-custom-bubbles">
+        <!--afixed navbar-->
+		<nav class="navbar navbar-expand-lg navbar-dark bg-custom-1">
+            <a class="navbar-brand" href="home_page">
+                <img src="http://clipart-library.com/img1/766256.png" alt="Logo" width="30" height="30">
+            </a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarText">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item active">
+                    <a class="nav-link" href="home_page">Home<span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="login">Create a Tier List</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="leaderboard">Leaderboard</a>
+                </li>
+		 <li class="nav-item">
+                    <a class="nav-link" href="search">Search</a>
+                </li>
+            </ul>
+            </div>
+        </nav>
+        <!--few breaks for spacing-->
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+       
+            
+            
+	<form class="form" action="/view" method="get">
+	  <% votes = data[0].votes %>
+	  <% id = data[0].tierlistid %> 
+	<select class="form-control" name="newVotes">
+		      <option value="1">Upvote</option>
+		      <option value="-1">Downvote</option>
+        </select>
+	<input class="form-control" type="hidden" id="id_val" name="id_val" value="<%=id%>" placeholder="<%=id%>">
+	<button type="submit" class="btn btn-primary">Submit Vote</button>
+	<div class="card" style="width: 18rem"><p class="card-text" id="itemText">Votes: <%=votes%></p></div> 
+	   
+ 
+            <% var ranks = [data[0].rank1, data[0].rank2, data[0].rank3,
+            data[0].rank4, data[0].rank5, data[0].rank6, data[0].rank7,
+            data[0].rank8, data[0].rank9, data[0].rank10] %>
+
+        <div>
+            <h1 style="text-align:center"><%=data[0].tierlist_name%></h1>
+        </div>
+        <!--table-->
+        <table style="margin-left:auto;margin-right:auto;">
+            <!--need to CSS this-->
+            <% for (var i = 0; i < data[0].num_ranks; i++) { %>
+            <tr id="tr1">
+                <td id = "row1" style="text-align:center; width:200px" ><%=ranks[i]%></td>
+                <td id= "cell1" style="text-align:left; width:1200px">
+                <% for (var j = 0; j < items.length; j++) { %>
+                <% if(items[j].ranking == ranks[i]) {  %>
+                <div class="card" style="width: 18rem"><p class="card-text" id="itemText"><%=items[j].item_name %></p></div>
+                <% } %>
+                <% } %>
+                </td>
+            </tr>
+            <% } %>
+        </table>
+        <br>
+        </form>
+        
+        
+        
+
+    </body>
+</html>

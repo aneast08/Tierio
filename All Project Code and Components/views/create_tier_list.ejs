@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <!--page setup-->
+        <script src="../create_tier.js"></script>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+		<meta name="description" content="">
+		<!-- Bootstrap core CSS -->
+		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+		<link href="../resources/css/my_style.css" rel="stylesheet">
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    </head>
+
+
+    <body class= "bg-custom-bubbles">
+        <!--afixed navbar-->
+		<nav class="navbar navbar-expand-lg navbar-dark bg-custom-1">
+            <a class="navbar-brand" href="home_page">
+                <h1>Tierio</h1>
+            </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarText">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item active">
+                    <a class="nav-link" href="home_page">Home<span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="login">Create a Tier List</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="leaderboard">Leaderboard</a>
+                </li>
+		<li class="nav-item">
+                    <a class="nav-link" href="search">Search</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+        <!--few breaks for spacing-->
+        <br>
+        <br>
+        <br>
+        <br>
+
+        <!--Creator Name input and Tier List description-->
+
+        <br>
+
+        <!--table-->
+        <table style="margin-left:auto;margin-right:auto;">
+            <!--need to CSS this-->
+            <tr id="tr1">
+                <td id = "row1" contenteditable = "true" style="text-align:center; width:400px" >SSS</td>
+                <td id= "cell1" ><button class="link" onclick="addElement('cell1');">Add Item</button></td>
+            </tr>
+            <tr id="tr2">
+                <td id = "row2" contenteditable = "true"  style="text-align:center; width:400px" >SS</td>
+                <td id= "cell2" ><button class="link" onclick="addElement('cell2');">Add Item</button></td>
+            </tr>
+            <tr id="tr3">
+                <td id = "row3"contenteditable = "true"  style="text-align:center; width:400px">S</td>
+                <td id= "cell3" ><button class="link" onclick="addElement('cell3');">Add Item</button></td>
+            </tr>
+            <tr id="tr4">
+                <td id = "row4" contenteditable = "true"  style="text-align:center; width:400px">A</td>
+                <td id= "cell4" ><button class="link" onclick="addElement('cell4');">Add Item</button></td>
+            </tr> 
+            <tr id="tr5">
+                <td id = "row5" contenteditable = "true" style="text-align:center; width:400px">B</td>
+                <td id= "cell5" ><button class="link" onclick="addElement('cell5');">Add Item</button></td>
+            </tr>
+            <tr id="tr6" style="display:none">
+                <td id = "row6" contenteditable = "true"  style="text-align:center; width:400px" >C</td>
+                <td id= "cell6" ><button class="link" onclick="addElement('cell6');">Add Item</button></td>
+            </tr>
+            <tr id="tr7" style="display:none">
+                <td id = "row7" contenteditable = "true" style="text-align:center; width:400px">D</td>
+                <td id= "cell7" ><button class="link" onclick="addElement('cell7');">Add Item</button></td>
+            </tr>
+            <tr id="tr8" style="display:none">
+                <td id = "row8" contenteditable = "true"  style="text-align:center; width:400px" >F</td>
+                <td id= "cell8" ><button class="link" onclick="addElement('cell8');">Add Item</button></td>
+            </tr>
+            <tr id="tr9" style="display:none">
+                <td id = "row9" contenteditable = "true"  style="text-align:center; width:400px">FF</td>
+                <td id= "cell9" ><button class="link" onclick="addElement('cell9');">Add Item</button></td>
+            </tr>
+            <tr id="tr10" style="display:none">
+                <td id = "row10" contenteditable = "true"  style="text-align:center; width:400px">FFF</td>
+                <td id= "cell10" ><button class="link" onclick="addElement('cell10');">Add Item</button></td>
+            </tr>
+        </table>
+        <br>
+
+        <br>
+
+        <div id='label-interface-flex'>
+			<button id='add' class="btn-bright-gradient" onclick="add_row();">Add Row</button>
+            <button id='sub' class="btn-bright-gradient" onclick="sub_row();">Delete Row</button>
+            <button id='submit' class ="btn-bright-gradient" onclick="submit_list(<%=tierId%>);">Submit Tier List</button>
+        </div>
+
+    </body>
+
+
+    <footer>
+
+    </footer>
+
+</html>

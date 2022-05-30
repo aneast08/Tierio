@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <!--page setup-->
+        <script src="../create_tier.js"></script>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+		<meta name="description" content="">
+		<!-- Bootstrap core CSS -->
+		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+		<link href="../resources/css/my_style.css" rel="stylesheet">
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    </head>
+
+
+    <body class= "bg-custom-bubbles">
+        <!--afixed navbar-->
+		<nav class="navbar navbar-expand-lg navbar-dark bg-custom-1">
+            <a class="navbar-brand" href="home.html">
+                <img src="http://clipart-library.com/img1/766256.png" alt="Logo" width="30" height="30">
+            </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarText">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item active">
+                    <a class="nav-link" href="home_page.html">Home<span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="login.html">Create a Tier List</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="leaderboard.html">Leaderboard</a>
+                </li>
+            </ul>
+            <div class="search">
+                <input type="text" class="searchTerm" placeholder="Search">
+                <button type="submit" class="searchButton" onClick = "window.location.href='search.html'"> GO </button>
+             </div>
+        </div>
+    </nav>
+        <!--few breaks for spacing-->
+        <br>
+        <br>
+        <br>
+        <br>
+
+        <!--Creator Name input and Tier List description-->
+
+        <br>
+
+        <!--table-->
+        <table style="margin-left:auto;margin-right:auto;">
+            <!--need to CSS this-->
+            <tr id="tr1">
+                <td id = "row1" contenteditable = "true" style="text-align:center; width:200px" >SSS</td>
+                <td id= "cell1" style="text-align:left; width:1200px"><button class="link" onclick="addElement('cell1');">Add Item</button></td>
+            </tr>
+            <tr id="tr2">
+                <td id = "row2" contenteditable = "true"  style="text-align:center; width:200px" >SS</td>
+                <td id= "cell2" style="text-align:left; width:1200px"><button class="link" onclick="addElement('cell2');">Add Item</button></td>
+            </tr>
+            <tr id="tr3">
+                <td id = "row3"contenteditable = "true"  style="text-align:center; width:200px">S</td>
+                <td id= "cell3" style="text-align:left; width:1200px"><button class="link" onclick="addElement('cell3');">Add Item</button></td>
+            </tr>
+            <tr id="tr4">
+                <td id = "row4" contenteditable = "true"  style="text-align:center; width:200px">A</td>
+                <td id= "cell4" style="text-align:left; width:1200px"><button class="link" onclick="addElement('cell4');">Add Item</button></td>
+            </tr> 
+            <tr id="tr5">
+                <td id = "row5" contenteditable = "true" style="text-align:center; width:200px">B</td>
+                <td id= "cell5" style="text-align:left; width:1200px"><button class="link" onclick="addElement('cell5');">Add Item</button></td>
+            </tr>
+            <tr id="tr6" style="display:none">
+                <td id = "row6" contenteditable = "true"  style="text-align:center; width:200px" >C</td>
+                <td id= "cell6" style="text-align:left; width:1200px"><button class="link" onclick="addElement('cell6');">Add Item</button></td>
+            </tr>
+            <tr id="tr7" style="display:none">
+                <td id = "row7" contenteditable = "true" style="text-align:center; width:200px">D</td>
+                <td id= "cell7" style="text-align:left; width:1200px"><button class="link" onclick="addElement('cell7');">Add Item</button></td>
+            </tr>
+            <tr id="tr8" style="display:none">
+                <td id = "row8" contenteditable = "true"  style="text-align:center; width:200px" >F</td>
+                <td id= "cell8" style="text-align:left; width:1200px"><button class="link" onclick="addElement('cell8');">Add Item</button></td>
+            </tr>
+            <tr id="tr9" style="display:none">
+                <td id = "row9" contenteditable = "true"  style="text-align:center; width:200px">FF</td>
+                <td id= "cell9" style="text-align:left; width:1200px"><button class="link" onclick="addElement('cell9');">Add Item</button></td>
+            </tr>
+            <tr id="tr10" style="display:none">
+                <td id = "row10" contenteditable = "true"  style="text-align:center; width:200px">FFF</td>
+                <td id= "cell10" style="text-align:left; width:1200px"><button class="link" onclick="addElement('cell10');">Add Item</button></td>
+            </tr>
+        </table>
+        <br>
+
+        <!--FORM
+        <div class="popup-form" id="form" style="display:none">
+            <form class="form-container" action="">
+                <td id="cell1" style="text-align:left; width:1200px">
+                
+                </td>
+				
+               
+                <input type="text" placeholder="Item Name" id="itemName" required>
+                <input type="text" placeholder="Item Description" id="itemDes" required>
+
+                button input for color
+                <div class="btn-group" id="color_id">
+                    <button type="button" class="btn btn-danger" value = "red">Red</button>
+                    <button type="button" class="btn btn-success" value = "green">Green</button>
+                    <button type="button" class="btn btn-primary" value= "blue">Blue</button>
+                </div>
+
+                <button class="button" onclick = "plusItem();">submit</button>
+            </form>
+        </div>-->
+
+        <br>
+
+        <div id='label-interface-flex'>
+			<button id='add' class="btn-bright-gradient" onclick="add_row();">Add Row</button>
+            <button id='sub' class="btn-bright-gradient" onclick="sub_row();">Delete Row</button>
+            <button id='submit' class ="btn-bright-gradient" onclick="submit_list();">Submit Tier List</button>
+		</div>
+
+        
+
+        <!--in file javascript for tracking page data (might not be needed idk tbh lmao)-->
+        <script>
+            var rowNum = 5;
+            var cellNum;
+        </script>
+    </body>
+
+
+    <footer>
+
+    </footer>
+
+</html>

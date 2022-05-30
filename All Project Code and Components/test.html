@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Tester</title>
+        <script src="TierList.js"></script>
+        <script>
+            var t = new TierList();
+            t.addRow("S");
+            t.addRow("A");
+            t.addRow("B");
+            t.addItem("a","a","S");
+            t.addItem("b","b","S");
+            t.addItem("c","c","S");
+            t.addItem("d","c","A");
+            t.changeRow("c","A");
+            t.print();
+        </script>
+    </head>
+</html>

@@ -1,0 +1,127 @@
+.bg-custom-1 {
+    background-image: linear-gradient(15deg, #13547a 0%, #80d0c7 100%);
+    }
+
+.bg-custom-bubbles {
+    background-image: url("https://bit.ly/30YZwk9");
+        }
+
+.btn-bright-gradient {
+    width: 200px;
+    font-size: 16px;
+    font-weight: 600;
+    color: #fff;
+    cursor: pointer;
+    margin: 20px;
+    height: 55px;
+    text-align:center;
+    border: none;
+    background-size: 300% 100%;
+
+    border-radius: 50px;
+    -o-transition: all .4s ease-in-out;
+    -webkit-transition: all .4s ease-in-out;
+    transition: all .4s ease-in-out;
+
+    background-image: linear-gradient(to right, #25aae1, #40e495, #30dd8a, #2bb673);
+    box-shadow: 0 4px 15px 0 rgba(49, 196, 190, 0.75);
+}
+
+table, th, td, tr {
+  border: 10px solid black;
+  height: 100px;
+}
+
+table tr:nth-child(odd) {
+  background-color: #13547a;
+}
+
+table tr:nth-child(even) {
+  background-color: #80d0c7;
+}
+
+
+
+
+#label-interface-flex {
+  display: flex;
+  flex-direction: column;
+  width: 10%;
+  text-align: center;
+  vertical-align: middle;
+  line-height: 100px;
+  font-weight: bold;
+  font-size: 25px;
+}
+
+#label-interface-flex > button{
+  border-top: 2px black solid;
+  border-left: 2px black solid;
+  border-radius: 8px;
+  background-color: white;
+  height: 50%;
+  text-align: center;
+  vertical-align: middle;
+  line-height: 100px;
+  font-weight: bold;
+  font-size: 25px;
+}
+
+#label-interface-container {
+  display: flex;
+  background-color: #80d0c7;
+}
+
+.search {
+  width: 20%;
+  position: relative;
+  display: flex;
+}
+
+.searchTerm {
+  width: 100%;
+  border: 3px solid #00B4CC;
+  border-right: none;
+  padding: 5px;
+  height: 50px;
+  border-radius: 5px 0 0 5px;
+  outline: none;
+  color: #9DBFAF;
+}
+
+
+.searchButton {
+  width: 60px;
+  height: 50px;
+  border: 1px solid #00B4CC;
+  background: #13547a;
+  text-align: center;
+  color: white;
+  border-radius: 0 5px 5px 0;
+  cursor: pointer;
+  font-size: 20px;
+}
+
+.navbar {
+  overflow: hidden;
+  background-color: #333;
+  position: fixed; /* Set the navbar to fixed position */
+  top: 0; /* Position the navbar at the top of the page */
+  width: 100%; /* Full width */
+}
+
+/* Links inside the navbar */
+.navbar a {
+  float: left;
+  display: block;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+/* Change background on mouse-over */
+.navbar a:hover {
+  background: #ddd;
+  color: black;
+}
